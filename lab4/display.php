@@ -38,6 +38,7 @@ mysqli_close($link);
 ?>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Улицы и адреса</title>
 </head>
 <body>

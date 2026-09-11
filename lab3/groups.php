@@ -18,6 +18,7 @@ mysqli_close($link);
 ?>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Список групп</title>
 </head>
 <body>
