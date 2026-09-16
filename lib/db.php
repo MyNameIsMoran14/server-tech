@@ -8,7 +8,7 @@ function init_connection() {
     $link = mysqli_connect($CFG->host, $CFG->user, $CFG->password, $CFG->database)
         or die("Failed to connect to database. Error: " . mysqli_connect_error());
 
-    // Без этого русские буквы, полученные из базы, будут превращаться в "?"
+    // Без этой фигни русские буквы, полученные из базы, будут превращаться в "?"
     mysqli_set_charset($link, "utf8mb4");
 
     return $link;
