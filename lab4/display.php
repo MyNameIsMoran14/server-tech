@@ -1,6 +1,7 @@
 <?php
 // Соединение с базой и выборка данных
 require_once __DIR__ . '/../lib/db.php';
+require_once __DIR__ . '/../lib/layout.php';
 
 $link = init_connection();
 
@@ -35,13 +36,12 @@ while ($row = mysqli_fetch_assoc($rs)) {
 
 mysqli_free_result($rs);
 mysqli_close($link);
+
+render_header('Лаба 4 — улицы и адреса');
 ?>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Улицы и адреса</title>
-</head>
-<body>
+    <h1>Лаба 4. Улицы и адреса</h1>
+    <p class="subtitle">Двухуровневый список: улица &rarr; её адреса</p>
+
     <ul>
 <?php foreach ($streets as $street) { ?>
         <li>
@@ -51,9 +51,9 @@ mysqli_close($link);
                 <li><?php echo $address; ?></li>
 <?php } ?>
             </ul>
-            Всего адресов: <?php echo count($street["addresses"]); ?>
+            <span class="hint">Всего адресов: <?php echo count($street["addresses"]); ?></span>
         </li>
 <?php } ?>
     </ul>
-</body>
-</html>
+<?php
+render_footer();

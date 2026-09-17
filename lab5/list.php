@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../lib/db.php';
+require_once __DIR__ . '/../lib/layout.php';
 
 $link = init_connection();
 
@@ -14,13 +15,12 @@ while ($row = mysqli_fetch_assoc($rs)) {
 
 mysqli_free_result($rs);
 mysqli_close($link);
+
+render_header('Лаба 5 — каталог автомобилей');
 ?>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Список автомобилей</title>
-</head>
-<body>
+    <h1>Лаба 5. Каталог автомобилей</h1>
+    <p class="subtitle">GET-запросы: список &rarr; детальная страница</p>
+
     <ul>
 <?php foreach ($autos as $auto) { ?>
         <li>
@@ -28,5 +28,5 @@ mysqli_close($link);
         </li>
 <?php } ?>
     </ul>
-</body>
-</html>
+<?php
+render_footer();

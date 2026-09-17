@@ -6,6 +6,7 @@ if (empty($id)) {
 }
 
 require_once __DIR__ . '/../lib/db.php';
+require_once __DIR__ . '/../lib/layout.php';
 
 $link = init_connection();
 
@@ -28,15 +29,11 @@ mysqli_close($link);
 if (empty($auto)) {
     die("The record with key $id does not exist");
 }
+
+render_header('Детальные сведения об автомобиле');
 ?>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Детальные сведения</title>
-</head>
-<body>
     <h1>Детальные сведения</h1>
-    <table border="1">
+    <table>
         <tr><th>Параметр</th><th>Значение</th></tr>
         <tr><td>Название</td><td><?php echo $auto["name"]; ?></td></tr>
         <tr><td>Год выпуска</td><td><?php echo $auto["year"]; ?></td></tr>
@@ -44,7 +41,5 @@ if (empty($auto)) {
         <tr><td>Фирма</td><td><?php echo $auto["firm_name"]; ?></td></tr>
         <tr><td>Страна</td><td><?php echo $auto["country_name"]; ?></td></tr>
     </table>
-    <br/>
-    <a href="list.php">Назад к списку</a>
-</body>
-</html>
+<?php
+render_footer('list.php', '&larr; назад к списку');

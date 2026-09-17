@@ -1,0 +1,315 @@
+:root {
+    --bg: #f4f4f4;
+    --text: #0a0a0a;
+    --muted: #8a8a8a;
+    --border: #e0e0e0;
+    --glitch-a: #00e5ff;
+    --glitch-b: #ff2d95;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Courier New', Consolas, monospace;
+    background: var(--bg);
+    color: var(--text);
+}
+
+a {
+    color: inherit;
+}
+
+/* ---------- nav ---------- */
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 40px;
+    z-index: 10;
+    mix-blend-mode: difference;
+    color: #fff;
+}
+
+.nav-logo, .nav-link {
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #fff;
+    transition: opacity 0.15s ease;
+}
+
+.nav-logo:hover, .nav-link:hover {
+    opacity: 0.6;
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0 24px;
+}
+
+.ascii-cloud {
+    position: absolute;
+    top: 50%;
+    margin: 0;
+    font-family: 'Courier New', Consolas, monospace;
+    font-size: 11px;
+    line-height: 12px;
+    color: #000;
+    opacity: 0.55;
+    white-space: pre;
+    pointer-events: none;
+    user-select: none;
+    transform: translateY(-50%);
+    animation: drift 9s ease-in-out infinite;
+}
+
+.ascii-cloud-left {
+    left: -4%;
+}
+
+.ascii-cloud-right {
+    right: -4%;
+    animation-delay: -4s;
+}
+
+@keyframes drift {
+    0%, 100% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-52%) translateX(6px); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 640px;
+}
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 18px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    line-height: 1.25;
+    margin: 0 0 20px;
+    font-weight: bold;
+}
+
+.hero h1 .muted {
+    color: var(--muted);
+    font-weight: normal;
+}
+
+.hero-subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 32px;
+}
+
+/* ---------- glitch text ---------- */
+
+.glitch {
+    position: relative;
+    display: inline-block;
+    color: var(--text);
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--bg);
+    mix-blend-mode: screen;
+}
+
+.glitch::before {
+    color: var(--glitch-a);
+    clip-path: inset(0 0 100% 0);
+    animation: glitch-a 5s steps(1) infinite;
+}
+
+.glitch::after {
+    color: var(--glitch-b);
+    clip-path: inset(100% 0 0 0);
+    animation: glitch-b 5s steps(1) infinite;
+}
+
+@keyframes glitch-a {
+    0%, 91%, 100% { clip-path: inset(0 0 100% 0); transform: translate(0, 0); }
+    92% { clip-path: inset(10% 0 55% 0); transform: translate(-3px, -1px); }
+    94% { clip-path: inset(40% 0 20% 0); transform: translate(3px, 1px); }
+    96% { clip-path: inset(0 0 80% 0); transform: translate(-2px, 0); }
+}
+
+@keyframes glitch-b {
+    0%, 90%, 100% { clip-path: inset(100% 0 0 0); transform: translate(0, 0); }
+    91% { clip-path: inset(55% 0 10% 0); transform: translate(3px, 1px); }
+    93% { clip-path: inset(20% 0 40% 0); transform: translate(-3px, -1px); }
+    95% { clip-path: inset(80% 0 0 0); transform: translate(2px, 0); }
+}
+
+/* ---------- CTA + progress ---------- */
+
+.cta {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 999px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.cta:hover {
+    transform: translateY(-2px);
+    opacity: 0.85;
+}
+
+.progress-wrap {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+}
+
+.progress-track {
+    width: 140px;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #000;
+    transition: width 0.4s ease;
+}
+
+.progress-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 1px;
+}
+
+/* ---------- labs section ---------- */
+
+.labs {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 24px 120px;
+}
+
+.labs h2 {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 28px;
+}
+
+.lab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 14px;
+}
+
+.lab-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-decoration: none;
+    color: var(--text);
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.lab-card:hover {
+    background: #000;
+    color: #fff;
+    border-color: #000;
+    transform: translateY(-3px);
+    animation: card-glitch 0.22s steps(2, end);
+}
+
+@keyframes card-glitch {
+    0% { transform: translateY(-3px) translateX(0); }
+    30% { transform: translateY(-3px) translateX(-2px); }
+    60% { transform: translateY(-3px) translateX(2px); }
+    100% { transform: translateY(-3px) translateX(0); }
+}
+
+.lab-card-num {
+    font-size: 12px;
+    color: var(--muted);
+    transition: color 0.15s ease;
+}
+
+.lab-card:hover .lab-card-num,
+.lab-card:hover .lab-card-tag {
+    color: #bdbdbd;
+}
+
+.lab-card-title {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.lab-card-desc {
+    font-size: 13px;
+    color: var(--muted);
+    transition: color 0.15s ease;
+}
+
+.lab-card:hover .lab-card-desc {
+    color: #d8d8d8;
+}
+
+.lab-card-tag {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 6px;
+}
+
+@media (max-width: 640px) {
+    .ascii-cloud { display: none; }
+    .hero h1 { font-size: 30px; }
+    .nav { padding: 16px 20px; }
+}

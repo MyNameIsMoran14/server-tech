@@ -1,6 +1,7 @@
 <?php
 // Соединение с базой и выборка данных
 require_once __DIR__ . '/../lib/db.php';
+require_once __DIR__ . '/../lib/layout.php';
 
 $link = init_connection();
 
@@ -15,17 +16,16 @@ while ($row = mysqli_fetch_assoc($rs)) {
 
 mysqli_free_result($rs);
 mysqli_close($link);
+
+render_header('Лаба 3 — список групп');
 ?>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Список групп</title>
-</head>
-<body>
+    <h1>Лаба 3. Список групп</h1>
+    <p class="subtitle">Демо-пример работы с БД (MySQL + mysqli)</p>
+
     <ul>
 <?php foreach ($groups as $name) { ?>
         <li><?php echo $name; ?></li>
 <?php } ?>
     </ul>
-</body>
-</html>
+<?php
+render_footer();
