@@ -2,7 +2,7 @@
 $labs = array(
     array('num' => '01', 'title' => 'HTML', 'desc' => 'теги, списки, ссылки', 'href' => '/lab1/variant10.html', 'tag' => 'статика'),
     array('num' => '02', 'title' => 'PHP', 'desc' => 'циклы, условия, вывод', 'href' => '/lab2/variant10.php', 'tag' => 'без БД'),
-    array('num' => '03', 'title' => 'Знакомство с AMP', 'desc' => 'первое подключение к БД', 'href' => '/lab3/groups.php', 'tag' => 'БД, демо'),
+    array('num' => '03', 'title' => 'Знакомство с AMP', 'desc' => 'первое подключение к БД', 'href' => '/lab3/variant10.php', 'tag' => 'БД, демо'),
     array('num' => '04', 'title' => 'Базы данных', 'desc' => 'улицы и адреса', 'href' => '/lab4/display.php', 'tag' => 'MySQL'),
     array('num' => '05', 'title' => 'GET-запросы', 'desc' => 'каталог автомобилей', 'href' => '/lab5/list.php', 'tag' => 'список + деталка'),
     array('num' => '06', 'title' => 'POST-запросы', 'desc' => 'отели по странам', 'href' => '/lab6/countries.php', 'tag' => 'форма + валидация'),
@@ -17,11 +17,11 @@ $progress = round($done / $total * 100);
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="/assets/landing.css">
-    <title>Учебный сайт — веб-программирование</title>
+    <title>server-tech</title>
 </head>
 <body>
     <nav class="nav">
-        <a class="nav-logo" href="/index.php">&#9670; учебный сайт</a>
+        <a class="nav-logo" href="/index.php">&#9670; server-tech</a>
         <a class="nav-link" href="#labs">лабы &darr;</a>
     </nav>
 
@@ -30,14 +30,13 @@ $progress = round($done / $total * 100);
         <pre id="ascii-cloud-right" class="ascii-cloud ascii-cloud-right" aria-hidden="true"></pre>
 
         <div class="hero-content">
-            <p class="eyebrow">основы web-программирования &middot; лабораторный практикум</p>
+            <p class="eyebrow">серверные технологии &middot; лабы</p>
             <h1>
-                <span class="muted">Собираем</span><br>
-                <span class="glitch" data-text="один сайт из пятнадцати лаб.">один сайт из пятнадцати лаб.</span>
+                <span class="muted">Все</span><br>
+                <span class="glitch" data-text="один сайт из пятнадцати лаб.">лабы</span>
             </h1>
             <p class="hero-subtitle">
                 HTML &rarr; PHP &rarr; MySQL &rarr; сессии &rarr; файлы &rarr; AJAX.<br>
-                Каждая лаба &mdash; новый кусочек одного и того же проекта.
             </p>
             <a class="cta" href="#labs">Смотреть лабы &darr;</a>
 
