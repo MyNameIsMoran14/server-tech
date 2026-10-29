@@ -6,6 +6,10 @@ $labs = array(
     array('num' => '04', 'title' => 'Базы данных', 'desc' => 'улицы и адреса', 'href' => '/lab4/display.php', 'tag' => 'MySQL'),
     array('num' => '05', 'title' => 'GET-запросы', 'desc' => 'каталог автомобилей', 'href' => '/lab5/list.php', 'tag' => 'список + деталка'),
     array('num' => '06', 'title' => 'POST-запросы', 'desc' => 'отели по странам', 'href' => '/lab6/countries.php', 'tag' => 'форма + валидация'),
+    array('num' => '07', 'title' => 'Сессии', 'desc' => 'логин, счётчик посещений', 'href' => '/lab7/login.php', 'tag' => 'авторизация'),
+    array('num' => '08', 'title' => 'Практика PHP', 'desc' => 'генерация таблицы', 'href' => '/lab8/variant1.php', 'tag' => 'без БД'),
+    array('num' => '09', 'title' => 'Работа с БД', 'desc' => 'полный набор SQL-скриптов', 'href' => '/lab9/display.php', 'tag' => 'schema/data/flush/drop'),
+    array('num' => '10', 'title' => 'GET + POST', 'desc' => 'CRUD улиц и адресов', 'href' => '/lab10/streets.php', 'tag' => 'список + добавление'),
 );
 
 $done = count($labs);

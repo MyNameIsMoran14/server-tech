@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS `lab7_visits`;
+DROP TABLE IF EXISTS `lab7_users`;

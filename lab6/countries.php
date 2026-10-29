@@ -16,7 +16,7 @@ $query = "SELECT country.id AS country_id, country.name AS country_name,"
 $rs = mysqli_query($link, $query)
     or die("Failed to retrieve data: " . mysqli_error($link));
 
-// Группируем плоскую выборку по странам
+// Группируем выборку по странам
 $countries = array();
 while ($row = mysqli_fetch_assoc($rs)) {
     $countryId = $row["country_id"];
